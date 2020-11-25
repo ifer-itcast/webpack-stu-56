@@ -12,7 +12,7 @@ npm i webpack webpack-cli -D
 npx webpack
 ```
 
-## 03. 改打包之后的文件
+## 03. 修改打包入口和出口
 
 ```js
 const path = require('path');
@@ -27,7 +27,11 @@ module.exports = {
 };
 ```
 
-## 04. 自动打包
+```
+npx webpack
+```
+
+## 04. 自动编译代码
 
 - 安装
 
@@ -59,4 +63,30 @@ npm i webpack-dev-server webpack-cli@3 -D
 
 ```bash
 npm run dev
+```
+
+## 05. html-webpack-plugin
+
+- 托管 HTML 文件到内存当中
+
+- 会自动的引入咱们的 JS 文件
+
+```bash
+npm i html-webpack-plugin -D
+```
+
+```js
+const HtmlWebpackPlugin =  require('html-webpack-plugin');
+
+const htmlPlugin = new HtmlWebpackPlugin({
+    // 模板
+    template: './src/index.html',
+    // 生成的文件名字
+    filename: 'index.html'
+});
+
+module.exports = {
+    // ...
+    plugins: [htmlPlugin]
+};
 ```

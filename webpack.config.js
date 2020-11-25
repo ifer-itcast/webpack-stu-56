@@ -1,4 +1,12 @@
 const path = require('path');
+const HtmlWebpackPlugin =  require('html-webpack-plugin');
+
+const htmlPlugin = new HtmlWebpackPlugin({
+    // 模板
+    template: './src/index.html',
+    // 生成的文件名字
+    filename: 'index.html'
+});
 
 module.exports = {
     mode: 'development', // 开发版本，production => 压缩
@@ -6,5 +14,6 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist') , // 指定的是一个目录
         filename: 'bundle.js' // 指定的是生成的文件名
-    }
+    },
+    plugins: [htmlPlugin]
 };
