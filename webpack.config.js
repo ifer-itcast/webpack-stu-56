@@ -18,12 +18,11 @@ module.exports = {
     plugins: [htmlPlugin],
     devServer: {
         open: true,
-        host: '127.0.0.1',
+        // host: '127.0.0.1',
         port: 9000
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader', 'postcss-loader'] // 有顺序
             },
@@ -34,7 +33,12 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader']
-            }
+            },
+            {
+                test: /\.jpg|png|gif|bmp|ttf|eot|svg|woff|woff2$/,
+                // 小于等于 limit 大小的图片会被转为 base64
+                use: 'url-loader?limit=272359'
+            },
         ]
     }
 };
