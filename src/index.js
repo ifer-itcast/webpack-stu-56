@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-import './css/style.css';
+import './less/style.less';
 
 $(function() {
     $('ul li:nth-child(odd)').css('backgroundColor', 'green');

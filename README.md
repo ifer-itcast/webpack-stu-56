@@ -123,3 +123,23 @@ module.exports = {
     }
 };
 ```
+
+## 08. 处理 Less
+
+```bash
+npm i less less-loader -D
+```
+
+```js
+// webpack.config.js
+module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.less$/,
+                use: ['style-loader', 'css-loader', 'less-loader']
+            }
+        ]
+    }
+};
+```
