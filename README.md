@@ -208,5 +208,6 @@ module.exports = {
 npm i url-loader file-loader -D
 ```
 
-## 12. 高版本JS的处理
+## 12. 高版本 JS 的处理
 
+## 13. 使用 Vue

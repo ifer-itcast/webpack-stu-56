@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const htmlPlugin = new HtmlWebpackPlugin({
     // 模板
@@ -15,7 +16,7 @@ module.exports = {
         path: path.join(__dirname, 'dist'), // 指定的是一个目录
         filename: 'bundle.js' // 指定的是生成的文件名
     },
-    plugins: [htmlPlugin],
+    plugins: [htmlPlugin, new VueLoaderPlugin()],
     devServer: {
         open: true,
         // host: '127.0.0.1',
@@ -37,12 +38,25 @@ module.exports = {
             {
                 test: /\.jpg|png|gif|bmp|ttf|eot|svg|woff|woff2$/,
                 // 小于等于 limit 大小的图片会被转为 base64
-                use: 'url-loader?limit=272359'
+                use: [{
+                    loader: 'url-loader?limit=272359',
+                    options: {
+                        esModule: false
+                    }
+                }]
             },
             {
                 test: /\.js$/,
                 use: 'babel-loader',
                 exclude: /node_modules/
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
+            {
+                test: /\.html$/,
+                use: 'html-withimg-loader'
             }
         ]
     }
