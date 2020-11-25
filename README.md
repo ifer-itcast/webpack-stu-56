@@ -202,10 +202,11 @@ module.exports = {
     }
 };
 ```
-
 ## 11. 处理背景图片/资源
 
 ```bash
 npm i url-loader file-loader -D
 ```
+
+## 12. 高版本JS的处理
 

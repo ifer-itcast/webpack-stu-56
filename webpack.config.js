@@ -39,6 +39,11 @@ module.exports = {
                 // 小于等于 limit 大小的图片会被转为 base64
                 use: 'url-loader?limit=272359'
             },
+            {
+                test: /\.js$/,
+                use: 'babel-loader',
+                exclude: /node_modules/
+            }
         ]
     }
 };
