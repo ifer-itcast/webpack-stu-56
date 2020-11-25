@@ -90,3 +90,16 @@ module.exports = {
     plugins: [htmlPlugin]
 };
 ```
+
+## 06. 配置 webpack-dev-server
+
+```js
+// webpack.config.js
+module.exports = {
+    devServer: {
+        open: true,
+        host: '127.0.0.1',
+        port: 9000
+    }
+};
+```
