@@ -25,7 +25,7 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader'] // 有顺序
+                use: ['style-loader', 'css-loader', 'postcss-loader'] // 有顺序
             },
             {
                 test: /\.less$/,

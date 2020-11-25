@@ -171,3 +171,34 @@ phantomjs_cdnurl=http://cnpmjs.org/downloads
 sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
 registry=https://registry.npm.taobao.org
 ```
+
+## 10. CSS 加前缀
+
+```bash
+npm i postcss-loader autoprefixer -D
+```
+
+postcss.config.js
+
+```js
+const autoprefixer = require('autoprefixer');
+
+module.exports = {
+    plugins: [autoprefixer]
+};
+```
+
+webpack.config.js
+
+```js
+module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader'] // 有顺序
+            },
+        ]
+    }
+};
+```
