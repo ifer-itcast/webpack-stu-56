@@ -20,5 +20,13 @@ module.exports = {
         open: true,
         host: '127.0.0.1',
         port: 9000
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'] // 有顺序
+            }
+        ]
     }
 };

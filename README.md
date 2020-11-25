@@ -103,3 +103,23 @@ module.exports = {
     }
 };
 ```
+
+## 07. 处理 css
+
+```js
+npm i css-loader style-loader -D
+```
+
+```js
+// webpack.config.js
+module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'] // 有顺序
+            }
+        ]
+    }
+};
+```
