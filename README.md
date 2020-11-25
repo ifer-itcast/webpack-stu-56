@@ -143,3 +143,31 @@ module.exports = {
     }
 };
 ```
+
+## 09. 处理 Sass
+
+```bash
+npm i sass-loader node-sass -D
+```
+
+```js
+// webpack.config.js
+module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            }
+        ]
+    }
+};
+```
+
+根目录新建 .npmrc 文件，指定特定包的下载地址
+
+```js
+phantomjs_cdnurl=http://cnpmjs.org/downloads
+sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
+registry=https://registry.npm.taobao.org
+```
