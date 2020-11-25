@@ -29,11 +29,15 @@ module.exports = {
 
 ## 04. 自动打包
 
+- 安装
+
 注意 webpack-dev-server 需要依赖 webpack-cli@3
 
 ```bash
 npm i webpack-dev-server webpack-cli@3 -D
 ```
+
+- 配置
 
 ```json
 // package.json
@@ -42,4 +46,17 @@ npm i webpack-dev-server webpack-cli@3 -D
         "dev": "webpack-dev-server"
     }
 }
+```
+
+- 引入
+
+```html
+<!-- 注意修改 src/index.html 中的引入路径 -->
+<script src="/bundle.js"></script>
+```
+
+- 执行
+
+```bash
+npm run dev
 ```
